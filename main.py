@@ -5,9 +5,6 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "Hello, World!"
 
 def get_data_for_rating(json_data, target_rating):
     # Load JSON data
@@ -34,7 +31,6 @@ def get_data_for_rating(json_data, target_rating):
     else:
         print(f"No information available for rating {target_rating}")
         return None, None
-
 
 def serialize_scheduling_cards(scheduling_cards):
     serialized_cards = {}

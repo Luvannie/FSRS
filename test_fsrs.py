@@ -29,24 +29,6 @@ def get_data_for_rating(json_data, target_rating):
         print(f"No information available for rating {target_rating}")
         return None, None
 
-def print_scheduling_cards(scheduling_cards, target_rating):
-    rating_mapping = {
-        Rating.Again: "Again",
-        Rating.Hard: "Hard",
-        Rating.Good: "Good",
-        Rating.Easy: "Easy",
-    }
-
-    target_rating_str = rating_mapping.get(target_rating, "Unknown Rating")
-
-    if target_rating in scheduling_cards:
-        print(f"{target_rating_str}.card:", scheduling_cards[target_rating].card.__dict__)
-        print()
-        print(f"{target_rating_str}.review_log:", scheduling_cards[target_rating].review_log.__dict__)
-    else:
-        print(f"No information available for {target_rating_str}")
-
-    print()
 def serialize_scheduling_cards(scheduling_cards):
     serialized_cards = {}
     for rating, scheduling_info in scheduling_cards.items():
